@@ -9,7 +9,7 @@ import java.util.Map;
  * stole on 16.07.17.
  */
 public class Ticker {
-    public static final String URL = "https://poloniex.com/public?command=returnTicker";
+    private static final String URL = "https://poloniex.com/public?command=returnTicker";
 
     @JsonProperty("coinPairs")
     private Map<String, TickerData> coinPairs;
@@ -25,6 +25,10 @@ public class Ticker {
 
     public void setCoinPairs(Map<String, TickerData> coinPairs) {
         this.coinPairs = coinPairs;
+    }
+
+    public static String getUrl() {
+        return URL;
     }
 
     @Override

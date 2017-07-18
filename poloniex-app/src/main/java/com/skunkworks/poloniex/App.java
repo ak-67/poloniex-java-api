@@ -23,7 +23,7 @@ public class App {
         return (args) -> {
             log.info("Poloniex.");
             RestTemplate restTemplate = new RestTemplate();
-            Ticker ticker = restTemplate.getForObject(Ticker.URL, Ticker.class);
+            Ticker ticker = restTemplate.getForObject(Ticker.getUrl(), Ticker.class);
             log.info(ticker.toString());
         };
     }
